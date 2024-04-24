@@ -32,6 +32,10 @@ class Tamagotchi {
 
 }
 
+let pet = new Tamagotchi("Fluffy")
+
+
+
 
 
 
