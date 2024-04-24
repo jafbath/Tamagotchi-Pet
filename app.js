@@ -9,32 +9,30 @@ class Tamagotchi {
         this.boredom = 0
         this.age = 0
     }
+    
     feed() {
-        if (this.hunger < 100) {
-            this.hunger += 3
+        if (this.hunger > 0 && this.hunger <= 100) {
+            this.hunger -= 3
+            document.getElementById("hunger").innerText = `Hunger: ${pet.hunger}`
         }
     }
     sleep() {
 
-        if (this.sleepiness < 100 && this.sleepiness > 0) {
+        if (this.sleepiness < 100 && this.sleepiness >= 0) {
             this.sleepiness -= 3
+            document.getElementById("sleepiness").innerText = `Sleepiness: ${pet.sleepiness}`
         }
     }
     play() {
         if (this.boredom > 0) {
             this.boredom -= 3
+            document.getElementById("boredom").innerText = `Boredom: ${pet.boredom}`
         }
     }
     increaseAge() {
         this.age++
     }
-    changeAll() {
-        if(this.hunger < 100)
-        this.hunger ++
-
-        this.sleepiness ++
-        this.boredom ++
-    }
+    
 
 
 }
@@ -43,7 +41,7 @@ let pet = new Tamagotchi("Fluffy")
 
 document.getElementById("name").innerText = pet.name
 document.getElementById("age").innerText = `Age: ${pet.age}`
-document.getElementById("hunger").innerText = `Hunger: ${pet.hunger}`
+document.getElementById("hunger").innerHTML = `Hunger: ${pet.hunger}`
 document.getElementById("sleepiness").innerText = `Sleepiness: ${pet.sleepiness}`
 document.getElementById("boredom").innerText = `Boredom: ${pet.boredom}`
 
