@@ -50,6 +50,7 @@ function updateStats() {
 
 
 
+
 setInterval(function() {
     pet.hunger --
     pet.sleepiness ++
@@ -75,6 +76,11 @@ document.getElementById("sleep").addEventListener("click", function () {
 
 document.getElementById("play").addEventListener("click", function () {
     pet.play()
+})
+
+document.getElementById("modeSwitch").addEventListener("click",function () {
+    let body = document.body
+    body.classList.toggle("dark-mode")
 })
 
 
