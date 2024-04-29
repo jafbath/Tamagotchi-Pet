@@ -4,15 +4,15 @@
 class Tamagotchi {
     constructor(name) {
         this.name = name
-        this.hunger = 100
+        this.hunger = 10
         this.sleepiness = 0
         this.boredom = 0
         this.age = 0
     }
     feed() {
-        if (this.hunger > 0 && this.hunger <= 100) {
-            this.hunger += 3
-            this.sleepiness += 3
+        if (this.hunger > 0 && this.hunger <= 10) {
+            this.hunger += 1
+            this.sleepiness += 1
             
             document.getElementById("hunger").innerText = `Hunger: ${pet.hunger}`
             document.getElementById("sleepiness").innerText = `Sleepiness: ${pet.sleepiness}`
@@ -20,15 +20,15 @@ class Tamagotchi {
     }
     sleep() {
 
-        if (this.sleepiness < 100 && this.sleepiness >= 0) {
-            this.sleepiness -= 2
+        if (this.sleepiness < 10 && this.sleepiness >= 0) {
+            this.sleepiness -= 1
             document.getElementById("sleepiness").innerText = `Sleepiness: ${pet.sleepiness}`
         }
     }
     play() {
         if (this.boredom >= 0) {
-            this.boredom -= 3
-            this.hunger -= 3
+            this.boredom -= 1
+            this.hunger -= 1
             document.getElementById("boredom").innerText = `Boredom: ${pet.boredom}`
             document.getElementById("hunger").innerText = `Hunger: ${pet.hunger}`
         }
@@ -36,7 +36,9 @@ class Tamagotchi {
     
 }
 
-let pet = new Tamagotchi(prompt ("Please eneter the name of your Tamagotchi: "))
+let pet = new Tamagotchi(prompt ("What is your pet's name? "))
+
+
 
 
 
@@ -55,15 +57,23 @@ function updateStats() {
 
 setInterval(function() {
     pet.hunger --
-    pet.sleepiness ++
     pet.boredom ++
     updateStats()
-},2000)
+},9000)
+
+setInterval(function() {
+    pet.sleepiness ++
+    updateStats()
+},14000)
 
 setInterval(function() {
     pet.age ++
     updateStats()
-},10000)
+},18000)
+
+
+
+
 
 
 
@@ -73,7 +83,10 @@ document.getElementById("feed").addEventListener("click", function () {
 })
 
 document.getElementById("sleep").addEventListener("click", function () {
-    pet.sleep()
+    pet.sleep(); {
+        let body = document.body
+        body.classList.toggle("dark-mode")
+    }
 })
 
 document.getElementById("play").addEventListener("click", function () {
