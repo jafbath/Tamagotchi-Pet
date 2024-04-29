@@ -36,7 +36,9 @@ class Tamagotchi {
     
 }
 
-let pet = new Tamagotchi("Fluffy")
+let pet = new Tamagotchi(prompt ("Please eneter the name of your Tamagotchi: "))
+
+
 
 document.getElementById("name").innerText = pet.name
 

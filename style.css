@@ -6,3 +6,19 @@ body {
     background-color: black;
     color: white;
 }
+
+button {
+    margin:5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+p {
+    font-size: larger;
+}
+
+#modeSwitch {
+    float: right;
+    position: relative;
+    bottom: 350px;
+}
