@@ -1,7 +1,15 @@
 body {
-    background-color: bisque;
+    background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXE1ZTY2ZGJvNmIxa3N5OGZ1a3I4eGQzcG1qYTMycWY1YjQ1ZGFhbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Xf6mHe22c55r3cnzAk/giphy.gif");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 97vw;
     color: black;
+    
+
 }
+
+
 
 #pikachu {
     width: 50px;
@@ -12,11 +20,15 @@ body {
 
 @keyframes backandfourth {
     0%, 100% { left: 0; }
-    50% {left: 90%; }
+    50% {left: calc(100% - 200px) }
 }
 
 .dark-mode {
-    background-color: black;
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3Zkb2JrMDE1dzYydGcwNG45NDQ1Z25hZHBoZWhuYWxteGt0ZXBtbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rRKcpDgvYNpEk/giphy.gif" );
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 97vw;
     color: white;
 }
 
@@ -28,11 +40,12 @@ button {
 
 p {
     font-size: larger;
+    font-weight: bold;
 }
 
 
 
-#modeSwitch {
+#lightSwitch {
     float: right;
     position: relative;
     bottom: 350px;

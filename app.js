@@ -108,7 +108,7 @@ document.getElementById("play").addEventListener("click", function () {
     pet.play()
 })
 
-document.getElementById("modeSwitch").addEventListener("click",function () {
+document.getElementById("lightSwitch").addEventListener("click",function () {
     let body = document.body
     body.classList.toggle("dark-mode")
 })
