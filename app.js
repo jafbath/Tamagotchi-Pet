@@ -42,6 +42,7 @@ let pet = new Tamagotchi(prompt ("What is your pet's name? "))
 
 
 
+
 document.getElementById("name").innerText = pet.name
 
 
