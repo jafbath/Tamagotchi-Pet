@@ -3,16 +3,16 @@ body {
     color: black;
 }
 
-img {
+#pikachu {
     width: 50px;
     height: 50px;
     position: relative;
-    animation: backandfourth 25s infinite
+    animation: backandfourth 35s infinite
 } 
 
 @keyframes backandfourth {
     0%, 100% { left: 0; }
-    50% {left: 100%; }
+    50% {left: 90%; }
 }
 
 .dark-mode {

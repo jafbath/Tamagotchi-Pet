@@ -10,7 +10,7 @@ class Tamagotchi {
         this.age = 0
     }
     feed() {
-        if (this.hunger > 0 && this.hunger <= 10) {
+        if (this.hunger > 0 && this.hunger <= 9) {
             this.hunger += 1
             this.sleepiness += 1
             
@@ -20,13 +20,13 @@ class Tamagotchi {
     }
     sleep() {
 
-        if (this.sleepiness < 10 && this.sleepiness >= 0) {
-            this.sleepiness -= 1
+        if (this.sleepiness < 10 && this.sleepiness >= 1) {
+            this.sleepiness -= 3
             document.getElementById("sleepiness").innerText = `Sleepiness: ${pet.sleepiness}`
         }
     }
     play() {
-        if (this.boredom >= 0) {
+        if (this.boredom >= 1) {
             this.boredom -= 1
             this.hunger -= 1
             document.getElementById("boredom").innerText = `Boredom: ${pet.boredom}`
@@ -53,28 +53,42 @@ function updateStats() {
     document.getElementById("age").innerText = `Age: ${pet.age}`
 }
 
+function deathAlert() {
+    if ((pet.hunger === 0) || (pet.boredom === 10) || (pet.sleepiness === 10)) {
+        alert("Oh no your pet has died!")
+    }
+}
+
+let img = document.getElementById("pikachu")
 
 
+setInterval(function() {
+    pet.age ++
+    updateStats()
+    if (pet.age === 4) {
+        alert("Your pet in now evolving!!")
+            img.style.width = "100px"
+            img.style.height = "100px"
+        }
+    if (pet.age === 8) {
+        alert("Your pet is in its final evolution!!")
+            img.style.width = "200px"
+            img.style.height = "300px"
+        }
+    },21000)
 
 setInterval(function() {
     pet.hunger --
     pet.boredom ++
     updateStats()
-},9000)
+    deathAlert()
+},7000)
 
 setInterval(function() {
     pet.sleepiness ++
     updateStats()
-},14000)
-
-setInterval(function() {
-    pet.age ++
-    updateStats()
+    deathAlert()
 },18000)
-
-
-
-
 
 
 
