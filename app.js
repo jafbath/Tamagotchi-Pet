@@ -54,7 +54,7 @@ function updateStats() {
 }
 
 function deathAlert() {
-    if ((pet.hunger === 0) || (pet.boredom === 10) || (pet.sleepiness === 10)) {
+    if ((pet.hunger === 0) || (pet.boredom === 10) || (pet.sleepiness >= 10)) {
         alert("Oh no your pet has died!")
     }
 }
